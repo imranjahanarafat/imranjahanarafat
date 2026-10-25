@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Imran Jahan Arafat - Personal Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        slate: {
+                            850: '#151f32',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #059669;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white custom-scrollbar">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 w-full glass-card border-b border-slate-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-emerald-700 transition">
+                    IA
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-slate-900 text-lg leading-tight group-hover:text-emerald-700 transition">Md. Imran Jahan Arafat</span>
+                    <span class="text-xs text-slate-500 font-medium">Trainer &amp; Social Entrepreneur</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-600">
+                <a href="#about" class="hover:text-emerald-600 transition py-1">About</a>
+                <a href="#expertise" class="hover:text-emerald-600 transition py-1">Pillars &amp; Skills</a>
+                <a href="#initiatives" class="hover:text-emerald-600 transition py-1">Initiatives</a>
+                <a href="#timeline" class="hover:text-emerald-600 transition py-1">Leadership &amp; Impact</a>
+                <a href="#contact" class="hover:text-emerald-600 transition py-1">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="openCvModal()" class="px-4 py-2 text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-lg border border-emerald-200 transition flex items-center gap-2">
+                    <i class="fa-solid fa-file-pdf">text</i> View Profile PDF
+                </button>
+                <a href="#contact" class="px-4 py-2 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-sm transition">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden text-slate-700 p-2 rounded-lg hover:bg-slate-100 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Nav -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block text-slate-700 font-medium hover:text-emerald-600 py-1">About</a>
+            <a href="#expertise" class="mobile-link block text-slate-700 font-medium hover:text-emerald-600 py-1">Pillars &amp; Skills</a>
+            <a href="#initiatives" class="mobile-link block text-slate-700 font-medium hover:text-emerald-600 py-1">Initiatives</a>
+            <a href="#timeline" class="mobile-link block text-slate-700 font-medium hover:text-emerald-600 py-1">Leadership &amp; Impact</a>
+            <a href="#contact" class="mobile-link block text-slate-700 font-medium hover:text-emerald-600 py-1">Contact</a>
+            <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                <button onclick="openCvModal()" class="w-full text-center py-2 text-xs font-semibold text-emerald-700 bg-emerald-50 rounded-lg border border-emerald-200">
+                    View Profile Summary PDF
+                </button>
+                <a href="#contact" class="mobile-link w-full text-center py-2 text-xs font-semibold text-white bg-emerald-600 rounded-lg">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-emerald-50/70 via-white to-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <div class="md:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+                        NSDA CBT&amp;A Level 4 Competent Assessor &amp; Trainer
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Empowering Youth, Transforming Care &amp; Driving <span class="text-emerald-600 underline decoration-emerald-300 decoration-wavy decoration-2">Social Action</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-600 font-normal leading-relaxed">
+                        A Bangladesh-based trainer, caregiving educator, and emerging social entrepreneur bridging practical skills development, menstrual health, youth empowerment, and climate action.
+                    </p>
+
+                    <!-- Personal Positioning Quote Card -->
+                    <div class="p-4 rounded-xl bg-white border-l-4 border-emerald-600 shadow-sm border-t border-r border-b border-slate-200/60">
+                        <p class="italic text-slate-700 text-sm font-medium">
+                            &ldquo;A trainer and emerging social entrepreneur committed to making learning practical, care more humane, and community development more inclusive and sustainable.&rdquo;
+                        </p>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#initiatives" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-md hover:shadow-lg transition flex items-center gap-2">
+                            Explore Initiatives <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#contact" class="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm border border-slate-300 shadow-sm transition">
+                            Collaborate With Me
+                        </a>
+                    </div>
+
+                    <!-- Contact Bar Quick Info -->
+                    <div class="pt-4 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-500 font-medium">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-emerald-600"></i>
+                            <span>Khulna / Dhaka, BD</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-emerald-600"></i>
+                            <span class="truncate">imranjahanarafat@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-2 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-phone text-emerald-600"></i>
+                            <span>+880 19454 75298</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Profile Card Showcase -->
+                <div class="md:col-span-5">
+                    <div class="relative mx-auto max-w-sm sm:max-w-md">
+                        <!-- Decorative Backdrop Blur -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl blur opacity-30"></div>
+                        
+                        <div class="relative bg-white rounded-2xl shadow-xl border border-slate-100 p-6 space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-bold text-2xl shadow-lg flex-shrink-0">
+                                    IA
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold text-slate-900">Md. Imran Jahan Arafat</h2>
+                                    <p class="text-xs text-emerald-700 font-semibold mt-0.5">Founder, WITH SHE Foundation</p>
+                                    <p class="text-xs text-slate-500 mt-1">English Literature Graduate | M.S. Governance &amp; Dev Studies</p>
+                                </div>
+                            </div>
+
+                            <!-- Stat Badge Grid -->
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
+                                    <span class="block text-xl font-bold text-emerald-700">5+ Yrs</span>
+                                    <span class="text-[11px] text-slate-500 font-medium">Field &amp; Training Exp.</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
+                                    <span class="block text-xl font-bold text-emerald-700">1,200+</span>
+                                    <span class="text-[11px] text-slate-500 font-medium">Women Impacted (MHH)</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
+                                    <span class="block text-xl font-bold text-emerald-700">192+</span>
+                                    <span class="text-[11px] text-slate-500 font-medium">Caregivers Trained</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
+                                    <span class="block text-xl font-bold text-emerald-700">26</span>
+                                    <span class="text-[11px] text-slate-500 font-medium">Districts Reached</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2 pt-2 border-t border-slate-100 text-xs">
+                                <div class="flex items-center justify-between text-slate-600">
+                                    <span><i class="fa-solid fa-award text-amber-500 mr-2"></i>Best Climatepreneur</span>
+                                    <span class="font-bold text-slate-800">2022</span>
+                                </div>
+                                <div class="flex items-center justify-between text-slate-600">
+                                    <span><i class="fa-solid fa-certificate text-emerald-600 mr-2"></i>ActionAid Bootcamp Winner</span>
+                                    <span class="font-bold text-slate-800">2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME & EXECUTIVE SUMMARY -->
+    <section id="about" class="py-16 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Executive Background</h2>
+                <h3 class="text-3xl font-bold text-slate-900">Blending Governance, Care &amp; Social Innovation</h3>
+                <p class="text-slate-600 text-sm">Translating academic background in English Literature and Governance into field-level community solutions.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900">Academic &amp; Governance Path</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Graduated in English Literature and pursuing a Master’s in Governance and Development Studies. Deeply interested in local institutions, public accountability, and civil society frameworks post-July 2024.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900">Dignity in Caregiving</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        NSDA Certified Caregiver (Level 2 &amp; 3) with practical family caregiving experience in dementia care and elder support. Associated with GMR Nursing Institute, facilitating over 8 batches of competency-based care training.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900">Sustainable Entrepreneurship</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Founder of <strong>WITH SHE Foundation</strong> (RJSC Registered), pioneering upcycled cloth sanitary pad production for women’s health and economic self-reliance, alongside organic venture <strong>AYUSH Fresh Salad</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE PILLARS & SKILLS -->
+    <section id="expertise" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Core Domain Expertise</h2>
+                <h3 class="text-3xl font-bold text-slate-900">Key Pillars of Impact &amp; Competencies</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pillar 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="text-emerald-600 text-2xl"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h4 class="font-bold text-slate-900 text-base">Skills &amp; Competency Training</h4>
+                    <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
+                        <li>• NSDA CBT&amp;A Level 4 Competent Assessor</li>
+                        <li>• Adult Learning Facilitation &amp; Module Design</li>
+                        <li>• ILO Entrepreneurship Training Frameworks</li>
+                        <li>• BSCIC Entrepreneurship Certification</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="text-emerald-600 text-2xl"><i class="fa-solid fa-venus"></i></div>
+                    <h4 class="font-bold text-slate-900 text-base">Women's SRHR &amp; Livelihoods</h4>
+                    <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
+                        <li>• Reusable Cloth Pad Production Training</li>
+                        <li>• Menstrual Hygiene &amp; Stigma Reduction</li>
+                        <li>• Garment Waste Upcycling &amp; Circularity</li>
+                        <li>• Grassroots Women Seller Hub Setup</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="text-emerald-600 text-2xl"><i class="fa-solid fa-earth-americas"></i></div>
+                    <h4 class="font-bold text-slate-900 text-base">Climate &amp; Green Skills</h4>
+                    <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
+                        <li>• EU Erasmus+ ACCESS4ALL Green Skills Alumnus</li>
+                        <li>• Nature-Based Play &amp; MekaTeam Climate Literacy</li>
+                        <li>• Natural Farming &amp; Local Seed Conservation</li>
+                        <li>• One React One Tree Community Challenge</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="text-emerald-600 text-2xl"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h4 class="font-bold text-slate-900 text-base">Caregiving &amp; Community Health</h4>
+                    <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
+                        <li>• Dementia, Elderly &amp; Infant Caregiving</li>
+                        <li>• Red Crescent Certified First Aid Trainer (UDRT)</li>
+                        <li>• JEEON / BRAC HBCC Field Ambassador</li>
+                        <li>• Participatory Theater for SBCC &amp; TIB</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE INITIATIVES & ENTERPRISES SECTION -->
+    <section id="initiatives" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-10">
+                <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Social Enterprise &amp; Projects</h2>
+                <h3 class="text-3xl font-bold text-slate-900">Featured Initiatives</h3>
+                <p class="text-sm text-slate-600">Click on the categories below to filter key initiatives and click any card for detailed insights.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterProjects('all')" class="project-tab active px-4 py-2 text-xs font-semibold rounded-full bg-emerald-600 text-white transition">All Projects</button>
+                <button onclick="filterProjects('women')" class="project-tab px-4 py-2 text-xs font-semibold rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition">WITH SHE &amp; SRHR</button>
+                <button onclick="filterProjects('care')" class="project-tab px-4 py-2 text-xs font-semibold rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Caregiving &amp; Skills</button>
+                <button onclick="filterProjects('climate')" class="project-tab px-4 py-2 text-xs font-semibold rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Climate &amp; Green Action</button>
+                <button onclick="filterProjects('food')" class="project-tab px-4 py-2 text-xs font-semibold rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Healthy Food Ventures</button>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: WITH SHE Foundation -->
+                <div class="project-card women bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between hover:shadow-lg transition">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-pink-100 text-pink-700">SRHR &amp; Women Empowerment</span>
+                            <span class="text-xs text-slate-400 font-medium">RJSC Registered</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">WITH SHE Foundation &amp; Enterprise</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Empowering rural women through upcycled cloth pad making, menstrual health education, and circular economy integration across 26 districts in Bangladesh.
+                        </p>
+                    </div>
+                    <button onclick="openModal('with-she')" class="w-full mt-4 py-2.5 text-xs font-semibold bg-white border border-slate-300 text-slate-700 rounded-xl hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700 transition flex items-center justify-center gap-2">
+                        View Project Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 2: Caregiving Training -->
+                <div class="project-card care bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between hover:shadow-lg transition">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-blue-100 text-blue-700">Competency Training</span>
+                            <span class="text-xs text-slate-400 font-medium">NSDA Aligned</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">Caregiving &amp; Skills Education</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Delivering NSDA Level 2 &amp; 3 Caregiving courses (Elderly, Dementia, Infant care) in collaboration with GMR Nursing Institute, reaching 192+ learners.
+                        </p>
+                    </div>
+                    <button onclick="openModal('caregiving')" class="w-full mt-4 py-2.5 text-xs font-semibold bg-white border border-slate-300 text-slate-700 rounded-xl hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700 transition flex items-center justify-center gap-2">
+                        View Project Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 3: ACCESS4ALL & Climate Action -->
+                <div class="project-card climate bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between hover:shadow-lg transition">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-emerald-100 text-emerald-700">Climate Action</span>
+                            <span class="text-xs text-slate-400 font-medium">EU Erasmus+</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">Green Skills &amp; Climate Resilience</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Fieldwork capstone in Hijla Upazila (Barishal) linking river erosion, women's livelihoods, and eco-friendly toys alongside MekaTeam nature-based learning.
+                        </p>
+                    </div>
+                    <button onclick="openModal('climate')" class="w-full mt-4 py-2.5 text-xs font-semibold bg-white border border-slate-300 text-slate-700 rounded-xl hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700 transition flex items-center justify-center gap-2">
+                        View Project Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 4: AYUSH Fresh Salad -->
+                <div class="project-card food bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between hover:shadow-lg transition">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-amber-100 text-amber-800">Healthy Nutrition</span>
+                            <span class="text-xs text-slate-400 font-medium">Dhaka Venture</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">AYUSH FRESH SALAD</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            A wellness-focused food startup in Khilgaon, Dhaka, providing affordable, customized breakfast salads and healthy meal subscriptions.
+                        </p>
+                    </div>
+                    <button onclick="openModal('ayush')" class="w-full mt-4 py-2.5 text-xs font-semibold bg-white border border-slate-300 text-slate-700 rounded-xl hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700 transition flex items-center justify-center gap-2">
+                        View Project Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 5: One React One Tree -->
+                <div class="project-card climate bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between hover:shadow-lg transition">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-emerald-100 text-emerald-700">Youth Reforestation</span>
+                            <span class="text-xs text-slate-400 font-medium">Digital to Field</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">One React One Tree Challenge</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            An innovative campaign translating online digital engagements into real-world tree planting across coastal communities and northern Bangladesh.
+                        </p>
+                    </div>
+                    <button onclick="openModal('onereact')" class="w-full mt-4 py-2.5 text-xs font-semibold bg-white border border-slate-300 text-slate-700 rounded-xl hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700 transition flex items-center justify-center gap-2">
+                        View Project Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 6: Advisory & Civic Engagement -->
+                <div class="project-card care bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between hover:shadow-lg transition">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-purple-100 text-purple-700">Advisory &amp; SBCC</span>
+                            <span class="text-xs text-slate-400 font-medium">Khulna Agro &amp; TIB</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">Advisory &amp; Community SBCC</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Advising Khulna Agro Commerce on food safety/NSDA OSH training, alongside participatory street theater for anti-corruption awareness with TIB.
+                        </p>
+                    </div>
+                    <button onclick="openModal('advisory')" class="w-full mt-4 py-2.5 text-xs font-semibold bg-white border border-slate-300 text-slate-700 rounded-xl hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700 transition flex items-center justify-center gap-2">
+                        View Project Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP & RECOGNITIONS TIMELINE -->
+    <section id="timeline" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Achievements &amp; History</h2>
+                <h3 class="text-3xl font-bold text-slate-900">Recognitions &amp; Key Milestones</h3>
+            </div>
+
+            <div class="relative border-l-2 border-emerald-300 max-w-3xl mx-auto ml-4 md:ml-auto space-y-8 pl-6">
+                <!-- 2026 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-600 border-4 border-white shadow"></div>
+                    <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-md">2026</span>
+                    <h4 class="text-base font-bold text-slate-900 mt-1">NSDA CBT&amp;A Level 4 Assessor Competency &amp; RJSC Registration</h4>
+                    <p class="text-xs text-slate-600 mt-1">
+                        Assessed Competent in NSDA CBT&amp;A Level 4 on September 19, 2026. Formally registered <strong>WITH SHE Foundation</strong> with the Registrar of Joint Stock Companies and Firms (August 20, 2026). Completed ACCESS4ALL Green Skills Course.
+                    </p>
+                </div>
+
+                <!-- 2025 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-600 border-4 border-white shadow"></div>
+                    <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-md">2025</span>
+                    <h4 class="text-base font-bold text-slate-900 mt-1">Winner - ActionAid Green Entrepreneurship Bootcamp</h4>
+                    <p class="text-xs text-slate-600 mt-1">
+                        Reported winner at ActionAid Green Entrepreneurship Bootcamp 2025, featured in the ActionAid Global Green Directory and UN Student Association of Bangladesh Rising Stars.
+                    </p>
+                </div>
+
+                <!-- 2023 - 2022 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-600 border-4 border-white shadow"></div>
+                    <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-md">2022 - 2023</span>
+                    <h4 class="text-base font-bold text-slate-900 mt-1">Best Climatepreneur Award &amp; American Corner Trainer</h4>
+                    <p class="text-xs text-slate-600 mt-1">
+                        Awarded <strong>Best Climatepreneur</strong> at Climate Camp 2022 (Climate Parliament Bangladesh &amp; Earth Society). Chief Trainer for national cloth pad making initiative with American Corner Khulna (Jan 2023).
+                    </p>
+                </div>
+
+                <!-- 2018 - 2019 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-600 border-4 border-white shadow"></div>
+                    <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-md">2018 - 2019</span>
+                    <h4 class="text-base font-bold text-slate-900 mt-1">National Finalist 'Get In The Ring' &amp; VSO ICS Volunteer</h4>
+                    <p class="text-xs text-slate-600 mt-1">
+                        National Finalist at Get In The Ring startup competition (2018/2019). Served as VSO ICS Volunteer in Parbatipur (Dinajpur) and Volunteer Coordinator at Easy Door Youth Volunteer Association.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION & INTERACTIVE FORM -->
+    <section id="contact" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-start">
+                
+                <div class="md:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Connect &amp; Collaborate</h2>
+                        <h3 class="text-3xl font-bold text-slate-900 mt-1">Let's Work Together</h3>
+                    </div>
+
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Whether you are looking for training facilitation, SRHR consulting, caregiving education support, or social enterprise collaboration, feel free to reach out.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-emerald-600 text-lg mt-0.5"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-semibold">Email Direct</span>
+                                <a href="mailto:imranjahanarafat@gmail.com" class="text-sm font-bold text-slate-900 hover:text-emerald-600 transition">imranjahanarafat@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-emerald-600 text-lg mt-0.5"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-semibold">Phone / WhatsApp</span>
+                                <a href="tel:+8801945475298" class="text-sm font-bold text-slate-900 hover:text-emerald-600 transition">+880 19454 75298</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-emerald-600 text-lg mt-0.5"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-semibold">Primary Operations</span>
+                                <span class="text-sm font-bold text-slate-900">Khulna &amp; Dhaka, Bangladesh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Contact Form -->
+                <div class="md:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 class="text-lg font-bold text-slate-900 mb-4">Send a Direct Message</h4>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label>
+                                <input type="text" required placeholder="e.g. Tanvir Ahmed" class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Your Email *</label>
+                                <input type="email" required placeholder="name@example.com" class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Subject / Area of Interest</label>
+                            <select class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                                <option>Training &amp; Workshop Facilitation</option>
+                                <option>WITH SHE Partnership / Pad Bank</option>
+                                <option>Caregiving Education &amp; Consulting</option>
+                                <option>Climate &amp; Green Skills Collaboration</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Message *</label>
+                            <textarea required rows="4" placeholder="How can we collaborate..." class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">
+                    IA
+                </div>
+                <div>
+                    <span class="block text-sm font-bold text-white">Md. Imran Jahan Arafat</span>
+                    <span class="text-xs text-slate-500">Trainer &amp; Emerging Social Entrepreneur</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500">
+                &copy; 2026 Md. Imran Jahan Arafat. All Rights Reserved.
+            </p>
+
+            <div class="flex items-center gap-4 text-slate-400 text-base">
+                <a href="mailto:imranjahanarafat@gmail.com" class="hover:text-emerald-400 transition" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:+8801945475298" class="hover:text-emerald-400 transition" title="Phone"><i class="fa-solid fa-phone"></i></a>
+                <a href="#hero" class="hover:text-emerald-400 transition text-xs flex items-center gap-1">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PROJECT DETAIL MODAL -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-slate-200 space-y-4 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div id="modalContent">
+                <!-- Dynamic Content Injected Here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CV SUMMARY MODAL -->
+    <div id="cvModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6 relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button onclick="closeCvModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="border-b border-slate-200 pb-4">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Executive CV Overview</span>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">Md. Imran Jahan Arafat</h3>
+                <p class="text-xs text-slate-500">Trainer &bull; Caregiving Educator &bull; Social Entrepreneur</p>
+            </div>
+
+            <div class="space-y-4 text-xs text-slate-600">
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">Education</h4>
+                    <p>&bull; Master’s in Governance &amp; Development Studies (Pursuing)</p>
+                    <p>&bull; Bachelor’s Degree in English Literature</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">Certifications &amp; Assessor Status</h4>
+                    <p>&bull; <strong>NSDA CBT&amp;A Level 4 Competent Assessor/Trainer</strong> (Assessed Sept 19, 2026)</p>
+                    <p>&bull; <strong>NSDA Caregiving Level 2 &amp; 3 Certified</strong> (Elderly, Dementia &amp; Infant Care)</p>
+                    <p>&bull; Red Crescent Certified Basic First Aid Trainer &amp; UDRT Member</p>
+                    <p>&bull; EU Erasmus+ ACCESS4ALL Green Skills Certified Alumnus</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">Key Achievements</h4>
+                    <p>&bull; Winner, ActionAid Green Entrepreneurship Bootcamp 2025</p>
+                    <p>&bull; Best Climatepreneur 2022 (Climate Camp / The Earth Society)</p>
+                    <p>&bull; National Finalist, Get In The Ring (2018/2019)</p>
+                    <p>&bull; Regional Finalist, GP Accelerator Program</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 flex justify-end">
+                <button onclick="closeCvModal()" class="px-5 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-semibold hover:bg-slate-900 transition">
+                    Close Summary
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 text-sm">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toastMsg">Message sent successfully!</span>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTION -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filter Projects Tab
+        function filterProjects(category) {
+            const tabs = document.querySelectorAll('.project-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-emerald-600', 'text-white', 'active');
+                tab.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            event.target.classList.remove('bg-slate-100', 'text-slate-700');
+            event.target.classList.add('bg-emerald-600', 'text-white', 'active');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Data & Functionality
+        const modalData = {
+            'with-she': {
+                title: "WITH SHE Foundation & Enterprise",
+                badge: "SRHR & Livelihoods",
+                content: `
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Registered with the Registrar of Joint Stock Companies and Firms (RJSC) on August 20, 2026. WITH SHE combines youth volunteerism with scalable social enterprise.
+                    </p>
+                    <h5 class="font-bold text-slate-900 text-xs mt-3">Key Highlights:</h5>
+                    <ul class="text-xs text-slate-600 space-y-1 mt-1">
+                        <li>&bull; Reusable cloth sanitary pad production empowering rural women.</li>
+                        <li>&bull; Reached 1,200+ women and 450+ volunteers across 26 districts.</li>
+                        <li>&bull; Collaborated with American Corner Khulna and Khulna Agro for Menstrual Hygiene Day pad bank setups.</li>
+                        <li>&bull; Garment waste upcycling to address plastic and sanitary waste.</li>
+                    </ul>
+                `
+            },
+            'caregiving': {
+                title: "Caregiving & Skills Education",
+                badge: "NSDA Certified",
+                content: `
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Associated with GMR Nursing Institute in Khulna as a certified caregiving trainer delivering NSDA Level 2 & 3 competency modules.
+                    </p>
+                    <h5 class="font-bold text-slate-900 text-xs mt-3">Scope of Work:</h5>
+                    <ul class="text-xs text-slate-600 space-y-1 mt-1">
+                        <li>&bull; Facilitated 8 batches with over 192 learners in Elderly, Dementia, and Infant caregiving.</li>
+                        <li>&bull; Personal experience with mild dementia family caregiving informing practical, compassionate care standards.</li>
+                    </ul>
+                `
+            },
+            'climate': {
+                title: "ACCESS4ALL & Green Skills Action",
+                badge: "EU Erasmus+",
+                content: `
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Completed the Green Skills for Climate Change Professional Course (ULAB, BRAC JPGSPH, Maastricht & Heidelberg partners).
+                    </p>
+                    <h5 class="font-bold text-slate-900 text-xs mt-3">Capstone Research:</h5>
+                    <ul class="text-xs text-slate-600 space-y-1 mt-1">
+                        <li>&bull; Investigated climate-vulnerable adolescents in Hijla Upazila (Barishal).</li>
+                        <li>&bull; Conducted 3-day residential natural farming &amp; seed preservation training.</li>
+                    </ul>
+                `
+            },
+            'ayush': {
+                title: "AYUSH FRESH SALAD",
+                badge: "Nutrition Venture",
+                content: `
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        A wellness-driven food business initiative located in Khilgaon, Dhaka.
+                    </p>
+                    <h5 class="font-bold text-slate-900 text-xs mt-3">Offerings:</h5>
+                    <ul class="text-xs text-slate-600 space-y-1 mt-1">
+                        <li>&bull; Fresh customized breakfast salads (cucumber, chickpeas, sour yogurt, nuts, seeds).</li>
+                        <li>&bull; Affordable packaging for event orders and health-conscious consumers.</li>
+                    </ul>
+                `
+            },
+            'onereact': {
+                title: "One React One Tree Challenge",
+                badge: "Reforestation Campaign",
+                content: `
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Initiated in 2019 to harness social media engagement into direct environmental conservation.
+                    </p>
+                    <h5 class="font-bold text-slate-900 text-xs mt-3">Impact:</h5>
+                    <ul class="text-xs text-slate-600 space-y-1 mt-1">
+                        <li>&bull; Planted trees across northern Bangladesh and coastal belts.</li>
+                        <li>&bull; Mobilized youth volunteers in waste management and conservation.</li>
+                    </ul>
+                `
+            },
+            'advisory': {
+                title: "Advisory & Community SBCC",
+                badge: "Advisory & Theater",
+                content: `
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Providing operational advisory for Khulna Agro Commerce & Preservation Solution in NSDA OSH and Food Safety.
+                    </p>
+                    <h5 class="font-bold text-slate-900 text-xs mt-3">Civic & Community SBCC:</h5>
+                    <ul class="text-xs text-slate-600 space-y-1 mt-1">
+                        <li>&bull; Served as community theater director for Transparency International Bangladesh (TIB).</li>
+                        <li>&bull; JEEON Bangladesh Field Ambassador for COVID-19 hygiene awareness (BRAC &amp; Unilever HBCC).</li>
+                    </ul>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const modal = document.getElementById('projectModal');
+            const content = document.getElementById('modalContent');
+            const data = modalData[key];
+
+            content.innerHTML = `
+                <div class="space-y-3">
+                    <span class="px-2.5 py-1 text-[10px] font-bold rounded-md bg-emerald-100 text-emerald-800">${data.badge}</span>
+                    <h3 class="text-xl font-bold text-slate-900">${data.title}</h3>
+                    <div class="pt-2 border-t border-slate-100">${data.content}</div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+
+        function openCvModal() {
+            document.getElementById('cvModal').classList.remove('hidden');
+        }
+
+        function closeCvModal() {
+            document.getElementById('cvModal').classList.add('hidden');
+        }
+
+        // Form Submit Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            event.target.reset();
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
